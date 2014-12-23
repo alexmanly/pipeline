@@ -4,7 +4,7 @@ driver:
 
 driver_config:
   network:
-    - ["forwarded_port", {guest: 8080, host: 9090, auto_correct: true}]
+    - ["forwarded_port", {guest: 8080, host: 9080}]
     - ["private_network", {ip: "33.33.33.10"}]
   customize:
     memory: 2048
@@ -34,7 +34,7 @@ suites:
       - recipe[resolver]
       - recipe[pipeline::jenkins]
       - recipe[pipeline::chefdk]
-      - recipe[chef-zero]
+      - recipe[pipeline::chef-zero]
       - recipe[pipeline::knife]
       - recipe[pipeline::jobs]
       - recipe[pipeline::kitchen]
