@@ -6,6 +6,6 @@ description      'Installs/Configures a Jenkins based chef delivery pipeline'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '2.1.1'
 
-%w{ apt yum git java jenkins chef-zero emacs sudo chef-dk resolver build-essential }.each do |cb|
+%w{ apt yum git java jenkins chef-zero emacs sudo chef-dk resolver }.each do |cb|
   depends cb
 end
