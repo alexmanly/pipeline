@@ -8,5 +8,5 @@ if [ -f Berksfile.lock ];
 fi
 
 # foodcritic -f correctness .
-foodcritic -f any -f ~FC014 .
+foodcritic -f any -f FC014 .
 berks upload

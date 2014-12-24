@@ -3,15 +3,15 @@ driver:
   name: digitalocean
 
 driver_config:
-  digitalocean_client_id: test-kitchen
-  digitalocean_api_key: 
+  digitalocean_access_token: <%= ENV['DIGITALOCEAN_ACCESS_TOKEN'] %>
+  ssh_key_ids: <%= ENV['DIGITAL_OCEAN_SSH_KEY_IDS'] %>
+  ssh_key: <%= ENV['DIGITAL_OCEAN_SSH_KEY_PATH'] %>
 
 platforms:
-- name: centos-7.0
-  driver_plugin: digitalocean
-  driver_config:
-    image_id: 4856048
-    flavor_id: 63
-    region_id: 8
-    ssh_key_ids: 
-    ssh_key: '~/.ssh/id_rsa'
+  - name: ubuntu-14-10-x64
+    driver_config:
+      size: 2gb
+  - name: centos-7-0-x64
+    driver_config:
+      size: 2gb
+      
